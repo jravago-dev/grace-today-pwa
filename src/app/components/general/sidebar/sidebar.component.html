@@ -1,0 +1,16 @@
+<mat-sidenav-container fullscreen>
+    <mat-sidenav #sidenav mode="push" role="navigation" [fixedInViewport]="true">
+        <mat-nav-list>
+            <mat-list-item routerLink="/today">Home</mat-list-item>
+            <mat-divider></mat-divider>
+            <mat-list-item routerLink="/about">About</mat-list-item>
+        </mat-nav-list>
+
+    </mat-sidenav>
+
+    <mat-sidenav-content role="main">
+        <app-navbar (toggleSidenav)="sidenav.toggle()"></app-navbar>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+
+</mat-sidenav-container>
