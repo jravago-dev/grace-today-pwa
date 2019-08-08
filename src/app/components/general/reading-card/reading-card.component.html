@@ -1,0 +1,13 @@
+<mat-card>
+    <mat-card-header>
+        <div mat-card-avatar [class.card-votd]="readingTypeNum==1" [class.card-fr]="readingTypeNum==2" [class.card-rs]="readingTypeNum==3" [class.card-sr]="readingTypeNum==4" [class.card-g]="readingTypeNum==5"></div>
+        <mat-card-title> {{ readingTitle }}</mat-card-title>
+        <mat-card-subtitle>{{ readingSubtitle }}</mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content>
+        <br/>
+        <img *ngIf="readingImage" class="reading-img" mat-card-image [src]="readingImage" />
+
+    </mat-card-content>
+</mat-card>

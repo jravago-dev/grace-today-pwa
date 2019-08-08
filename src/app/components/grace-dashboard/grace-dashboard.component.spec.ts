@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CreditsComponent } from './credits.component';
+import { GraceDashboardComponent } from './grace-dashboard.component';
 
-describe('CreditsComponent', () => {
-  let component: CreditsComponent;
-  let fixture: ComponentFixture<CreditsComponent>;
+describe('GraceDashboardComponent', () => {
+  let component: GraceDashboardComponent;
+  let fixture: ComponentFixture<GraceDashboardComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CreditsComponent ]
+      declarations: [ GraceDashboardComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CreditsComponent);
+    fixture = TestBed.createComponent(GraceDashboardComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

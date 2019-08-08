@@ -12,42 +12,38 @@ import { FlexLayoutModule } from '@angular/flex-layout'
 import { ScrollingModule } from '@angular/cdk/scrolling';
 
 import { 
-  MatToolbarModule,  
-  MatMenuModule,
+  MatToolbarModule,
   MatIconModule,
   MatListModule,
   MatCardModule,
-  MatButtonModule,
-  MatTableModule,
+  MatButtonModule,  
   MatDividerModule,
   MatSidenavModule,
   MatProgressSpinnerModule,
  }
    from '@angular/material';
 import { NavbarComponent } from './components/general/navbar/navbar.component';
-import { VerseDashboardComponent } from './components/verse-dashboard/verse-dashboard.component';
+
 import { SidebarComponent } from './components/general/sidebar/sidebar.component';
 
 import { AboutComponent } from './components/about/about.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
-import { CreditsComponent } from './components/general/credits/credits.component';
 
-
-
-
+import { ReadingCardComponent } from './components/general/reading-card/reading-card.component';
+import { GraceDashboardComponent } from './components/grace-dashboard/grace-dashboard.component';
+import { ReferenceComponent } from './components/reference/reference.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent,
-    VerseDashboardComponent,
+    NavbarComponent,    
     AboutComponent,
-    SidebarComponent,
-    CreditsComponent
-  
-    
+    SidebarComponent,    
+    ReadingCardComponent,
+    GraceDashboardComponent,
+    ReferenceComponent 
   ],
   imports: [
     BrowserModule,
@@ -57,11 +53,9 @@ import { CreditsComponent } from './components/general/credits/credits.component
     FormsModule,
     ReactiveFormsModule,
     MatToolbarModule,
-    MatMenuModule,
     MatIconModule,
     MatCardModule,
     MatButtonModule,
-    MatTableModule,
     MatListModule,
     MatDividerModule,
     MatSidenavModule,    
