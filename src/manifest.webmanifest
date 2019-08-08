@@ -1,7 +1,7 @@
 {
     "name": "Daily Catholic Verse",
     "short_name": "daily-catholic-verse",
-    "theme_color": "#1976d2",
+    "theme_color": "#a9504a",
     "background_color": "#fafafa",
     "display": "fullscreen",
     "categories": ["religion", "catholic", "scriptures"],
