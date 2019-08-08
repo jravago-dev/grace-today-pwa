@@ -27,8 +27,7 @@ import {
 import { NavbarComponent } from './components/general/navbar/navbar.component';
 import { VerseDashboardComponent } from './components/verse-dashboard/verse-dashboard.component';
 import { SidebarComponent } from './components/general/sidebar/sidebar.component';
-import { LoggerService } from './services/utils/logger.service';
-import { ConsoleLoggerService } from './services/utils/console-logger.service';
+
 import { AboutComponent } from './components/about/about.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
@@ -69,7 +68,7 @@ import { environment } from '../environments/environment';
     AppRoutingModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
-  providers: [ { provide: LoggerService, useClass: ConsoleLoggerService }],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
