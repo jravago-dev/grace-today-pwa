@@ -15,9 +15,8 @@ export class VerseDashboardComponent implements OnInit {
 
     if(!this.verseObject) { this.verseObject = []; }
 
-    bibleService.getVerse().subscribe(r => {
-      if (r){
-        console.log(r.data)
+    bibleService.getVerseToday().subscribe(r => {
+      if (r){        
         this.verseObject = r.data
         this.verseText = this.formatText(r.data.readings[2].text)
             

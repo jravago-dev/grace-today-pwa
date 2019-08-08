@@ -18,9 +18,20 @@ export class BibleApiService {
 
   constructor(private http: HttpClient) { }
 
-  getVerse() : Observable<any>{
+  getVerseToday() : Observable<any>{
 
-      return this.http.get<any>(this.apiURL)
+     let todaysDate = new Date();
+     console.log(todaysDate)
+     let yearParameter = todaysDate.getFullYear()
+     let dayParameter = '0' + todaysDate.getDate().toString().slice(-2)
+     let monthParameter = '0' + (todaysDate.getMonth()+1).toString().slice(-2)
+     let dateParameter = `${yearParameter}-${monthParameter}-${dayParameter}`
+     
+    console.log(dayParameter)
+
+     console.log(dateParameter)
+
+      return this.http.get<any>(`${this.apiURL}/${dateParameter}`)
       .pipe(
         catchError((err: HttpErrorResponse) => {
           return this.errorHandler(err)

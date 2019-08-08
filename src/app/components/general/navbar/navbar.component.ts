@@ -1,6 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router'
-import { ConsoleLoggerService } from 'src/app/services/utils/console-logger.service';
 
 
 @Component({
