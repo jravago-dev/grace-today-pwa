@@ -5,7 +5,9 @@
 export const environment = {
   production: false,
   isDebugMode: true,
-  verseAPI: `https://publication.evangelizo.ws/AM/days`
+  verseAPI: `https://publication.evangelizo.ws/AM/days`,
+  //votdAPI: `http://labs.bible.org/api/?passage=votd&type=json&formatting=para`
+  votdAPI: `https://beta.ourmanna.com/api/v1/get/?format=json`
 };
 
 /*

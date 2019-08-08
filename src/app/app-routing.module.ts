@@ -1,19 +1,24 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AboutComponent } from './components/about/about.component';
-import { VerseDashboardComponent } from './components/verse-dashboard/verse-dashboard.component';
-import { CreditsComponent } from './components/general/credits/credits.component';
+
+import { GraceDashboardComponent } from './components/grace-dashboard/grace-dashboard.component';
+import { ReferenceComponent } from './components/reference/reference.component';
+import { ReadingsListComponent } from './components/readings-list/readings-list.component';
 
 
 const routes: Routes = [ 
   {
-    path: 'today', component: VerseDashboardComponent
+    path: 'today', component: GraceDashboardComponent
+  },
+  {
+    path: 'readings', component: ReadingsListComponent
   },
   {
     path: 'about', component: AboutComponent
   },
   {
-    path: 'thanks', component: CreditsComponent
+    path: 'thanks', component: ReferenceComponent
   },
   {
     path: '',

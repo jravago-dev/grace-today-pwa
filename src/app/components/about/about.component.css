@@ -6,7 +6,7 @@
 .aboutCard {
     width: 80%;
     margin: 0 auto !important;
-    margin-top: 50px !important;
+    margin-bottom: 15px !important;
 }
 
 mat-card-footer {

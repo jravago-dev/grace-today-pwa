@@ -1,13 +1,42 @@
-<mat-toolbar>
-
+<mat-toolbar class="graceClass">
     <mat-toolbar-row>
-
         <button mat-icon-button (click)="toggleSidenav.emit()">
             <mat-icon>menu</mat-icon>
           </button>
+        <span class="toolbar-title">Grace : Today</span>
 
-        <span class="toolbar-title"> Grace Today </span>
+        <div fxFlex fxLayout fxLayoutAlign="flex-end">
+
+            <ul fxLayout fxLayoutGap="20px" class="navigation-items">
+
+                <li fxHide.xs>
+                    <button mat-icon-button [matMenuTriggerFor]="about">
+                              <mat-icon>help_outline</mat-icon>
+                            </button>
+                    <mat-menu #about="matMenu">
+                        <button mat-menu-item>
+                                           
+                                            <span>About (Coming soon!)</span>
+                                          </button>
+                    </mat-menu>
+                </li>
+
+                <li>
+                    <button mat-icon-button [matMenuTriggerFor]="auth">
+                              <mat-icon>person_outline</mat-icon>
+                            </button>
+                    <mat-menu #auth="matMenu">
+                        <button mat-menu-item>
+                                <mat-icon>exit_to_app</mat-icon>
+                                <span>Sign out (Coming soon!)</span>
+                              </button>
+                    </mat-menu>
+                </li>
+            </ul>
+        </div>
 
     </mat-toolbar-row>
-
+    <mat-toolbar-row>
+        <span class="mat-caption">Devotion App and Catholic Liturgy Readings</span>
+    </mat-toolbar-row>
 </mat-toolbar>

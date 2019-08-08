@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { VerseDashboardComponent } from './verse-dashboard.component';
+import { GraceDashboardComponent } from './grace-dashboard.component';
 
-describe('VerseDashboardComponent', () => {
-  let component: VerseDashboardComponent;
-  let fixture: ComponentFixture<VerseDashboardComponent>;
+describe('GraceDashboardComponent', () => {
+  let component: GraceDashboardComponent;
+  let fixture: ComponentFixture<GraceDashboardComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ VerseDashboardComponent ]
+      declarations: [ GraceDashboardComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(VerseDashboardComponent);
+    fixture = TestBed.createComponent(GraceDashboardComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

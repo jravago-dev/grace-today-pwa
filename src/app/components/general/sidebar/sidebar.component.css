@@ -1,7 +1,22 @@
 mat-sidenav {
     width: 200px;
+    font-family: 'Open Sans', sans-serif !important;
 }
 
-mat-sidenav-container {
-    margin-top: 60px;
+mat-sidenav-content {
+    padding-top: 150px !important;
+}
+
+toolbar-title {
+    margin: 0 16px 0 16px;
+}
+
+mat-list-item {
+    font-size: 12px !important;
+    font-family: 'Open Sans', sans-serif !important;
+}
+
+.sidenavToolbar {
+    background: #000 !important;
+    color: #fff !important;
 }

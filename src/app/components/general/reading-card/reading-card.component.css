@@ -1,0 +1,48 @@
+    mat-card {
+        font-family: 'Open Sans', sans-serif;
+        width: 80%;
+        margin: 0 auto;
+        margin-bottom: 25px !important;
+    }
+    
+    .card-votd {
+        background-image: url('https://www.pngarts.com/files/1/V-In-The-Circle-PNG-Transparent-Image.png');
+        background-size: cover;
+    }
+    
+    .card-fr {
+        background-image: url('https://pngimg.com/uploads/letter_f/letter_f_PNG90.png');
+        background-size: cover;
+    }
+    
+    .card-rs {
+        background-image: url('http://pngriver.com/wp-content/uploads/2018/04/Download-Copyright-Symbol-R.png');
+        background-size: cover;
+    }
+    
+    .card-sr {
+        background-image: url('http://www.clker.com/cliparts/w/E/Y/b/l/q/letter-s-in-a-cercle-blue-hi.png');
+        background-size: cover;
+    }
+    
+    .card-g {
+        background-image: url('http://www.clker.com/cliparts/X/T/U/R/x/v/white-letter-g-hi.png');
+        background-size: cover;
+    }
+    
+    .reading-image {
+        margin: 0 auto;
+        margin-top: 5px;
+        width: 80%;
+    }
+    
+    p {
+        margin-top: 10px !important;
+        font-style: italic;
+        font-size: 1.2em;
+    }
+    
+    mat-card-footer {
+        text-align: right !important;
+        padding-right: 20px !important;
+    }
