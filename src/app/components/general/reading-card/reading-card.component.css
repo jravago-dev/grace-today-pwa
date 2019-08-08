@@ -35,3 +35,14 @@
         margin-top: 5px;
         width: 80%;
     }
+    
+    p {
+        margin-top: 10px !important;
+        font-style: italic;
+        font-size: 1.2em;
+    }
+    
+    mat-card-footer {
+        text-align: right !important;
+        padding-right: 20px !important;
+    }

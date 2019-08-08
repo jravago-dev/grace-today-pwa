@@ -14,8 +14,12 @@ export class ReadingCardComponent implements OnInit {
   @Input() readingSubtitle: string;
   @Input() readingBody: string;
   @Input() readingImage: string;
+  dateToday;
 
-  constructor(private bibleApiService: BibleApiService) { }
+  constructor(private bibleApiService: BibleApiService) {
+    
+    this.dateToday = new Date(Date.now()).toLocaleString();
+   }
 
   ngOnInit() {
   }

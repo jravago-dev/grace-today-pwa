@@ -6,7 +6,7 @@ import { throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
 const httpOptions = {
-  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+  headers: new HttpHeaders({ 'Content-Type': 'application/json', 'Access-Control-Allow-Origin' : '*' })
 };
 
 @Injectable({
@@ -15,10 +15,21 @@ const httpOptions = {
 export class BibleApiService {
 
   apiURL:string = environment.verseAPI;
+  votdURL: string = environment.votdAPI;
 
   constructor(private http: HttpClient) { }
 
-  getVerseToday() : Observable<any>{
+
+  getVerseToday(): Observable<any>{
+    return this.http.get<any>(`${this.votdURL}`, httpOptions)
+    .pipe(
+      catchError((err: HttpErrorResponse) => {
+        return this.errorHandler(err)
+      })
+    )   
+  }
+
+  getReadingsToday() : Observable<any>{
 
      let todaysDate = new Date();
    

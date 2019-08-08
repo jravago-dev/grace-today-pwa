@@ -20,7 +20,8 @@ import {
   MatDividerModule,
   MatSidenavModule,
   MatMenuModule,
-  MatProgressSpinnerModule,
+  MatProgressBarModule 
+  
  }
    from '@angular/material';
 import { NavbarComponent } from './components/general/navbar/navbar.component';
@@ -62,7 +63,7 @@ import { ReadingsListComponent } from './components/readings-list/readings-list.
     MatListModule,
     MatDividerModule,
     MatSidenavModule,    
-    MatProgressSpinnerModule,    
+    MatProgressBarModule,    
     MatMenuModule,
     ScrollingModule,
     AppRoutingModule,

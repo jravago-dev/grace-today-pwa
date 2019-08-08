@@ -1,10 +1,15 @@
 .referenceCard {
     width: 80%;
     margin: 0 auto !important;
-    margin-top: 50px !important;
+    margin-top: 10px !important;
 }
 
 mat-card-footer {
     text-align: center;
     color: #eee !important;
+}
+
+.example-header-image {
+    background-image: url('https://pngimage.net/wp-content/uploads/2018/06/poring-png.png');
+    background-size: cover;
 }

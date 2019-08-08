@@ -4,10 +4,12 @@
         <mat-card-title> {{ readingTitle }}</mat-card-title>
         <mat-card-subtitle>{{ readingSubtitle }}</mat-card-subtitle>
     </mat-card-header>
-
+    <mat-divider></mat-divider>
     <mat-card-content>
-        <br/>
         <img *ngIf="readingImage" class="reading-img" mat-card-image [src]="readingImage" />
-
+        <p>{{ readingBody }}</p>
     </mat-card-content>
+    <mat-card-footer>
+        <mat-card-subtitle class="footer">{{ dateToday }}</mat-card-subtitle>
+    </mat-card-footer>
 </mat-card>
