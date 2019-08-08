@@ -4,11 +4,15 @@ import { AboutComponent } from './components/about/about.component';
 
 import { GraceDashboardComponent } from './components/grace-dashboard/grace-dashboard.component';
 import { ReferenceComponent } from './components/reference/reference.component';
+import { ReadingsListComponent } from './components/readings-list/readings-list.component';
 
 
 const routes: Routes = [ 
   {
     path: 'today', component: GraceDashboardComponent
+  },
+  {
+    path: 'readings', component: ReadingsListComponent
   },
   {
     path: 'about', component: AboutComponent

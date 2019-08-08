@@ -19,6 +19,7 @@ import {
   MatButtonModule,  
   MatDividerModule,
   MatSidenavModule,
+  MatMenuModule,
   MatProgressSpinnerModule,
  }
    from '@angular/material';
@@ -33,6 +34,7 @@ import { environment } from '../environments/environment';
 import { ReadingCardComponent } from './components/general/reading-card/reading-card.component';
 import { GraceDashboardComponent } from './components/grace-dashboard/grace-dashboard.component';
 import { ReferenceComponent } from './components/reference/reference.component';
+import { ReadingsListComponent } from './components/readings-list/readings-list.component';
 
 
 @NgModule({
@@ -43,7 +45,8 @@ import { ReferenceComponent } from './components/reference/reference.component';
     SidebarComponent,    
     ReadingCardComponent,
     GraceDashboardComponent,
-    ReferenceComponent 
+    ReferenceComponent,
+    ReadingsListComponent 
   ],
   imports: [
     BrowserModule,
@@ -60,6 +63,7 @@ import { ReferenceComponent } from './components/reference/reference.component';
     MatDividerModule,
     MatSidenavModule,    
     MatProgressSpinnerModule,    
+    MatMenuModule,
     ScrollingModule,
     AppRoutingModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
