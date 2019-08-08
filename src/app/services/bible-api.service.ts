@@ -21,15 +21,12 @@ export class BibleApiService {
   getVerseToday() : Observable<any>{
 
      let todaysDate = new Date();
-     console.log(todaysDate)
+   
      let yearParameter = todaysDate.getFullYear()
      let dayParameter = '0' + todaysDate.getDate().toString().slice(-2)
      let monthParameter = '0' + (todaysDate.getMonth()+1).toString().slice(-2)
-     let dateParameter = `${yearParameter}-${monthParameter}-${dayParameter}`
-     
-    console.log(dayParameter)
+     let dateParameter = `${yearParameter}-${monthParameter}-${dayParameter}`    
 
-     console.log(dateParameter)
 
       return this.http.get<any>(`${this.apiURL}/${dateParameter}`)
       .pipe(
