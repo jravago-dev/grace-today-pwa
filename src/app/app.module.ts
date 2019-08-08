@@ -31,6 +31,7 @@ import { SidebarComponent } from './components/general/sidebar/sidebar.component
 import { AboutComponent } from './components/about/about.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { CreditsComponent } from './components/general/credits/credits.component';
 
 
 
@@ -43,7 +44,8 @@ import { environment } from '../environments/environment';
     NavbarComponent,
     VerseDashboardComponent,
     AboutComponent,
-    SidebarComponent
+    SidebarComponent,
+    CreditsComponent
   
     
   ],
