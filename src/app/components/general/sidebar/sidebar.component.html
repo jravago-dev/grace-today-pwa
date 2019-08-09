@@ -1,5 +1,5 @@
 <mat-sidenav-container fullscreen>
-    <mat-sidenav #sidenav mode="over" role="navigation" [fixedInViewport]="true">
+    <mat-sidenav #sidenav mode="push" role="navigation" [fixedInViewport]="true">
         <mat-toolbar>
             <mat-toolbar-row class="sidenavToolbar">
                 <h2 class="toolbar-title">Grace : Today</h2>
@@ -8,10 +8,10 @@
 
         <mat-nav-list>
             <h2 matSubheader>Menu</h2>
-            <mat-list-item routerLink="/today">
-                <mat-icon>today</mat-icon> &nbsp; V.O.T.D
+            <mat-list-item (click)="sidenav.toggle()" routerLink="/today">
+                <mat-icon>today</mat-icon> &nbsp; Today's Verse
             </mat-list-item>
-            <mat-list-item routerLink="/readings">
+            <mat-list-item (click)="sidenav.toggle()" routerLink="/readings">
                 <mat-icon>local_library</mat-icon>
                 Liturgy Readings
             </mat-list-item>
@@ -20,18 +20,18 @@
 
             <h2 matSubheader>Misc</h2>
 
-            <mat-list-item routerLink="/about">
+            <mat-list-item (click)="sidenav.toggle()" routerLink="/about">
                 <mat-icon>list</mat-icon>
                 Changelogs
             </mat-list-item>
-            <mat-list-item routerLink="/thanks">
+            <mat-list-item (click)="sidenav.toggle()" routerLink="/thanks">
                 <mat-icon>done_all</mat-icon>
                 Special Thanks
             </mat-list-item>
 
             <mat-divider></mat-divider>
 
-            <h2 matSubheader>v3.0.0</h2>
+            <h2 matSubheader>v3.1.0</h2>
 
         </mat-nav-list>
 

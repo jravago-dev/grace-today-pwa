@@ -20,7 +20,8 @@ import {
   MatDividerModule,
   MatSidenavModule,
   MatMenuModule,
-  MatProgressBarModule 
+  MatProgressBarModule,
+  MatSnackBarModule
   
  }
    from '@angular/material';
@@ -65,6 +66,7 @@ import { ReadingsListComponent } from './components/readings-list/readings-list.
     MatSidenavModule,    
     MatProgressBarModule,    
     MatMenuModule,
+    MatSnackBarModule,
     ScrollingModule,
     AppRoutingModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })

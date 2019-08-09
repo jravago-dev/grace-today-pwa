@@ -25,11 +25,8 @@ export class GraceDashboardComponent implements OnInit {
     })
   }
 
-  formatText(text){
-
-    let removedBrackets = text.replace(/\[/g, '(').replace(/]/g, ')').replace(/ *\([^)]*\) */g, "").replace(/\(|\)/g, '<br/><br/>');   
-
-    return removedBrackets;
-  }
+returnQuoted(text){
+  return `"${text}"`;
+}
 
 }
