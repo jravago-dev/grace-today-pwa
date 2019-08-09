@@ -5,8 +5,9 @@ import { Observable } from 'rxjs';
 import { throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
+
 const httpOptions = {
-  headers: new HttpHeaders({ 'Content-Type': 'application/json', 'Access-Control-Allow-Origin' : '*' })
+  headers: new HttpHeaders({ 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' })
 };
 
 @Injectable({
@@ -14,39 +15,64 @@ const httpOptions = {
 })
 export class BibleApiService {
 
-  apiURL:string = environment.verseAPI;
+  apiURL: string = environment.verseAPI;
   votdURL: string = environment.votdAPI;
+  bibleURL: string = environment.bibleAPI;
 
   constructor(private http: HttpClient) { }
 
 
-  getVerseToday(): Observable<any>{
+  getVerseToday(): Observable<any> {
     return this.http.get<any>(`${this.votdURL}`, httpOptions)
-    .pipe(
-      catchError((err: HttpErrorResponse) => {
-        return this.errorHandler(err)
-      })
-    )   
-  }
-
-  getReadingsToday() : Observable<any>{
-
-     let todaysDate = new Date();
-   
-     let yearParameter = todaysDate.getFullYear()
-     let dayParameter = '0' + todaysDate.getDate().toString().slice(-2)
-     let monthParameter = '0' + (todaysDate.getMonth()+1).toString().slice(-2)
-     let dateParameter = `${yearParameter}-${monthParameter}-${dayParameter}`    
-
-
-      return this.http.get<any>(`${this.apiURL}/${dateParameter}`)
       .pipe(
         catchError((err: HttpErrorResponse) => {
           return this.errorHandler(err)
         })
       )
-    
   }
+
+  getReadingsToday(): Observable<any> {
+
+    let todaysDate = new Date();
+
+    let yearParameter = todaysDate.getFullYear()
+    let dayParameter = '0' + todaysDate.getDate().toString().slice(-2)
+    let monthParameter = '0' + (todaysDate.getMonth() + 1).toString().slice(-2)
+    let dateParameter = `${yearParameter}-${monthParameter}-${dayParameter}`
+
+
+    return this.http.get<any>(`${this.apiURL}/${dateParameter}`)
+      .pipe(
+        catchError((err: HttpErrorResponse) => {
+          return this.errorHandler(err)
+        })
+      )
+
+  }
+
+  getSpecificVerse(verse) {
+
+    return this.http.get<any>(`${this.bibleURL}/${verse}`)
+      .pipe(
+        catchError((err: HttpErrorResponse) => {
+          return this.errorHandler(err)
+        })
+      )
+
+  }
+
+  getRandomPlaceholderImage(readingType) {
+    /*
+    return this.http.get(this.imageURL + '/photos?client_id=' + environment.unsplashAppID + '&query="' + readingType + '"&count=1')
+      .pipe(
+        catchError((err: HttpErrorResponse) => {
+          return this.errorHandler(err)
+        })
+      )
+    */
+  }
+
+
 
   errorHandler(error: HttpErrorResponse) {
     return throwError(error || "Internal Server Error");

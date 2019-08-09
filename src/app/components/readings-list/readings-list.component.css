@@ -1,0 +1,23 @@
+mat-progress-bar {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.liturgyData {
+    font-family: 'Open Sans', sans-serif !important;
+}
+
+.readingListHeader {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.readingListHeader h4 {
+    font-style: italic;
+}
+
+.liturgyData {
+    padding-bottom: 50px !important;
+    margin-bottom: 150px !important;
+}

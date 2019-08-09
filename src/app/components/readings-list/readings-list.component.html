@@ -1,15 +1,18 @@
-<app-reading-card readingTitle="First Reading" readingSubtitle="Mt 16,13-23" readingTypeNum="2">
+<mat-progress-bar *ngIf="!liturgyData" mode="query">
+</mat-progress-bar>
 
-</app-reading-card>
+<div *ngIf="liturgyData" class="liturgyData">
+    <div class="readingListHeader">
+        <h1 class="mat-headline"> {{ liturgyData.date_displayed }}</h1>
+        <h4 class="mat-subheading-1">{{ liturgyData.liturgic_title }}</h4>
+    </div>
 
-<app-reading-card readingTitle="Responsorial Psalm" readingSubtitle="" readingTypeNum="3">
+    <div class="readingListContent" *ngIf="liturgyReadings">
+        <ng-container *ngFor="let book of liturgyReadings">
+            <app-reading-card [readingType]="book.book_type" [readingTitle]="book.title" [readingSubtitle]="book.reading_code" [readingBody]="returnFormattedData(book.text)">
+            </app-reading-card>
+        </ng-container>
+    </div>
 
-</app-reading-card>
 
-<app-reading-card readingTitle="No Second Reading" readingSubtitle="" readingTypeNum="4">
-
-</app-reading-card>
-
-<app-reading-card readingTitle="Gospel" readingSubtitle="Mt 16,13-23" readingTypeNum="5">
-
-</app-reading-card>
+</div>

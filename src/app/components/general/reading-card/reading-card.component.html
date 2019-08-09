@@ -1,15 +1,58 @@
-<mat-card>
+<mat-card *ngIf="readingType === 'reading'" class="">
     <mat-card-header>
-        <div mat-card-avatar [class.card-votd]="readingTypeNum==1" [class.card-fr]="readingTypeNum==2" [class.card-rs]="readingTypeNum==3" [class.card-sr]="readingTypeNum==4" [class.card-g]="readingTypeNum==5"></div>
+        <div mat-card-avatar class="card-r"></div>
         <mat-card-title> {{ readingTitle }}</mat-card-title>
         <mat-card-subtitle>{{ readingSubtitle }}</mat-card-subtitle>
     </mat-card-header>
     <mat-divider></mat-divider>
     <mat-card-content>
         <img *ngIf="readingImage" class="reading-img" mat-card-image [src]="readingImage" />
-        <p>{{ readingBody }}</p>
+        <div class="prewrapper"> {{ readingBody }} </div>
     </mat-card-content>
     <mat-card-footer>
-        <mat-card-subtitle class="footer">{{ dateToday }}</mat-card-subtitle>
+        <mat-card-subtitle class="footer">Reading</mat-card-subtitle>
     </mat-card-footer>
+</mat-card>
+
+<mat-card *ngIf="readingType === 'psalm'">
+    <mat-card-header>
+        <div mat-card-avatar class="card-p"></div>
+        <mat-card-title> {{ readingTitle }}</mat-card-title>
+        <mat-card-subtitle>{{ readingSubtitle }}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-divider></mat-divider>
+    <mat-card-content>
+        <img *ngIf="readingImage" class="reading-img" mat-card-image [src]="readingImage" />
+        <div class="prewrapper"> {{ readingBody }} </div>
+    </mat-card-content>
+    <mat-card-footer>
+        <mat-card-subtitle class="footer">Responsorial Psalm</mat-card-subtitle>
+    </mat-card-footer>
+</mat-card>
+
+<mat-card *ngIf="readingType === 'gospel'" class="gospel">
+
+    <mat-card-title> {{ readingTitle }}</mat-card-title>
+    <mat-card-subtitle>{{ readingSubtitle }}</mat-card-subtitle>
+
+    <mat-card-content>
+        <img class="reading-img" mat-card-image src="https://images.pexels.com/photos/267709/pexels-photo-267709.jpeg" />
+        <div class="prewrapper justified"> {{ readingBody }} </div>
+    </mat-card-content>
+    <mat-card-footer>
+        <mat-card-subtitle class="footer">The Gospel of the Lord.</mat-card-subtitle>
+    </mat-card-footer>
+</mat-card>
+
+<mat-card *ngIf="readingType === 'votd'" class='votd'>
+    <mat-card-title> {{ readingTitle }}</mat-card-title>
+    <br/>
+    <mat-card-content>
+        <img class="reading-img" mat-card-image src="https://images.pexels.com/photos/70847/cross-sunset-sunrise-hill-70847.jpeg" />
+        <mat-card-subtitle>{{ readingSubtitle }}</mat-card-subtitle>
+        <div class="prewrapper verseContext"> {{ readingBody }} </div>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-button (click)="openSnackBar('Coming soon!','Okay Sige')">SHARE</button>
+    </mat-card-actions>
 </mat-card>

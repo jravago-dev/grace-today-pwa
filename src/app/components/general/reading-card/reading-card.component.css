@@ -5,28 +5,13 @@
         margin-bottom: 25px !important;
     }
     
-    .card-votd {
-        background-image: url('https://www.pngarts.com/files/1/V-In-The-Circle-PNG-Transparent-Image.png');
+    .card-p {
+        background-image: url('https://icon-library.net/images/icon-p/icon-p-29.jpg');
         background-size: cover;
     }
     
-    .card-fr {
-        background-image: url('https://pngimg.com/uploads/letter_f/letter_f_PNG90.png');
-        background-size: cover;
-    }
-    
-    .card-rs {
+    .card-r {
         background-image: url('http://pngriver.com/wp-content/uploads/2018/04/Download-Copyright-Symbol-R.png');
-        background-size: cover;
-    }
-    
-    .card-sr {
-        background-image: url('http://www.clker.com/cliparts/w/E/Y/b/l/q/letter-s-in-a-cercle-blue-hi.png');
-        background-size: cover;
-    }
-    
-    .card-g {
-        background-image: url('http://www.clker.com/cliparts/X/T/U/R/x/v/white-letter-g-hi.png');
         background-size: cover;
     }
     
@@ -45,4 +30,29 @@
     mat-card-footer {
         text-align: right !important;
         padding-right: 20px !important;
+    }
+    
+    .footer {
+        text-align: right !important;
+    }
+    
+    .prewrapper {
+        white-space: pre-wrap;
+        text-align: justify !important;
+    }
+    
+    .gospel mat-card-title,
+    .gospel mat-card-subtitle,
+    .votd mat-card-title,
+    .votd mat-card-subtitle {
+        text-align: center !important;
+    }
+    
+    .gospel .reading-img {
+        margin-top: 5px !important;
+        margin-bottom: -10px !important;
+    }
+    
+    .verseContext {
+        font-size: 1.5em;
     }

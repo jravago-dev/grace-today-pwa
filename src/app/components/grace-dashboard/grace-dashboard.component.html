@@ -1,6 +1,5 @@
 <mat-progress-bar *ngIf="!votd" mode="query">
 </mat-progress-bar>
 
-<app-reading-card *ngIf="votd" readingTitle="Verse of the day" [readingSubtitle]="votd.reference" [readingBody]="votd.text" readingTypeNum="1">
-
+<app-reading-card *ngIf="votd" readingType="votd" readingTitle="Today's Verse" [readingSubtitle]="votd.reference" [readingBody]="returnQuoted(votd.text)">
 </app-reading-card>
