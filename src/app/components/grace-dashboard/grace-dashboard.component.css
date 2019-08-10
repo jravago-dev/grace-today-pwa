@@ -2,3 +2,7 @@ mat-progress-bar {
     width: 80%;
     margin: 0 auto;
 }
+
+app-reading-card {
+    padding-bottom: 150px !important;
+}

@@ -34,12 +34,7 @@ export class BibleApiService {
   getReadingsToday(): Observable<any> {
 
     let todaysDate = new Date();
-
-    let yearParameter = todaysDate.getFullYear()
-    let dayParameter = '0' + todaysDate.getDate().toString().slice(-2)
-    let monthParameter = '0' + (todaysDate.getMonth() + 1).toString().slice(-2)
-    let dateParameter = `${yearParameter}-${monthParameter}-${dayParameter}`
-
+    let dateParameter = this.formatDate(todaysDate)
 
     return this.http.get<any>(`${this.apiURL}/${dateParameter}`)
       .pipe(
@@ -72,6 +67,17 @@ export class BibleApiService {
     */
   }
 
+   formatDate(date) {
+    let d = new Date(date),
+        month = '' + (d.getMonth() + 1),
+        day = '' + d.getDate(),
+        year = d.getFullYear();
+
+    if (month.length < 2) month = '0' + month;
+    if (day.length < 2) day = '0' + day;
+
+    return [year, month, day].join('-');
+}
 
 
   errorHandler(error: HttpErrorResponse) {
