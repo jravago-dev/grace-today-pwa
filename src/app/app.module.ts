@@ -4,27 +4,30 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { FlexLayoutModule } from '@angular/flex-layout'
 
 import { ScrollingModule } from '@angular/cdk/scrolling';
 
-import { 
+import { RequestCache } from './cache/request-cache.service';
+import { CachingInterceptor } from './cache/caching-interceptor.service';
+
+import {
   MatToolbarModule,
   MatIconModule,
   MatListModule,
   MatCardModule,
-  MatButtonModule,  
+  MatButtonModule,
   MatDividerModule,
   MatSidenavModule,
   MatMenuModule,
   MatProgressBarModule,
   MatSnackBarModule
-  
- }
-   from '@angular/material';
+
+}
+  from '@angular/material';
 import { NavbarComponent } from './components/general/navbar/navbar.component';
 
 import { SidebarComponent } from './components/general/sidebar/sidebar.component';
@@ -42,13 +45,13 @@ import { ReadingsListComponent } from './components/readings-list/readings-list.
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent,    
+    NavbarComponent,
     AboutComponent,
-    SidebarComponent,    
+    SidebarComponent,
     ReadingCardComponent,
     GraceDashboardComponent,
     ReferenceComponent,
-    ReadingsListComponent 
+    ReadingsListComponent
   ],
   imports: [
     BrowserModule,
@@ -63,15 +66,15 @@ import { ReadingsListComponent } from './components/readings-list/readings-list.
     MatButtonModule,
     MatListModule,
     MatDividerModule,
-    MatSidenavModule,    
-    MatProgressBarModule,    
+    MatSidenavModule,
+    MatProgressBarModule,
     MatMenuModule,
     MatSnackBarModule,
     ScrollingModule,
     AppRoutingModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
-  providers: [],
+  providers: [{ provide: HTTP_INTERCEPTORS, useClass: CachingInterceptor, multi: true }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
