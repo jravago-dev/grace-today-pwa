@@ -56,3 +56,8 @@
     .verseContext {
         font-size: 1.5em;
     }
+    
+    .votd {
+        height: auto !important;
+        margin-bottom: 250px !important;
+    }
