@@ -40,6 +40,7 @@ import { ReadingCardComponent } from './components/general/reading-card/reading-
 import { GraceDashboardComponent } from './components/grace-dashboard/grace-dashboard.component';
 import { ReferenceComponent } from './components/reference/reference.component';
 import { ReadingsListComponent } from './components/readings-list/readings-list.component';
+import { PushNotificationService } from './services/push-notification.service';
 
 
 @NgModule({
@@ -74,7 +75,7 @@ import { ReadingsListComponent } from './components/readings-list/readings-list.
     AppRoutingModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
-  providers: [{ provide: HTTP_INTERCEPTORS, useClass: CachingInterceptor, multi: true }],
+  providers: [{ provide: HTTP_INTERCEPTORS, useClass: CachingInterceptor, multi: true }, PushNotificationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

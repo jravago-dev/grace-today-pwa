@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { SwUpdate, SwPush } from '@angular/service-worker';
+import { PushNotificationService } from 'src/app/services/push-notification.service';
+import { MatSnackBar } from '@angular/material';
 
 @Component({
   selector: 'app-sidebar',
@@ -7,13 +10,33 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SidebarComponent implements OnInit {
 
-  constructor() { }
+  readonly VAPID_KEY = "";
 
-  ngOnInit() {
+  constructor(private swUpdate: SwUpdate, private swPush: SwPush, private notif: PushNotificationService, private _snackBar:MatSnackBar) {
   }
 
-  toggle(){
-    
+  ngOnInit() {
+
+  }
+
+  openSnackBar(message: string, action: string) {
+    this._snackBar.open(message, action, {
+      duration: 5000,
+    });
+  }
+
+
+  subscribeToNotifications() {
+
+    this.swPush.requestSubscription({
+      serverPublicKey: this.VAPID_KEY
+    })
+      .then(sub => {
+        this.notif.requestSubscription(sub).subscribe()
+        this.openSnackBar(`Great, you've been added to subscriptions list.`, 'Dismiss');
+      })
+
+
   }
 
 }
