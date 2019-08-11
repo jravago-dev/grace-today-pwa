@@ -29,7 +29,8 @@
         "cacheConfig": {
             "maxSize": 100,
             "maxAge": "1d",
-            "strategy": "freshness"
+            "strategy": "freshness",
+            "timeout": "10s"
         }
     }]
 }

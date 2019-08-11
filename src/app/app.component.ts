@@ -52,12 +52,9 @@ export class AppComponent {
 
     window.addEventListener('popstate', () => {
       //TODO: Optionally show a "Press back again to exit" tooltip
-
-      this.openSnackBar('You are now offline.', 'Dismiss')
-
       setTimeout(() => {
         window.history.pushState({}, '');
-        //TODO: Optionally hide tooltip
+        //TODO: Optionally hide tooltip        
       }, 2000);
     });
   }
