@@ -12,7 +12,7 @@ export class SidebarComponent implements OnInit {
 
   readonly VAPID_KEY = "";
 
-  constructor(private swUpdate: SwUpdate, private swPush: SwPush, private notif: PushNotificationService, private _snackBar:MatSnackBar) {
+  constructor(private swUpdate: SwUpdate, private swPush: SwPush, private notif: PushNotificationService, private _snackBar: MatSnackBar) {
   }
 
   ngOnInit() {
@@ -27,16 +27,18 @@ export class SidebarComponent implements OnInit {
 
 
   subscribeToNotifications() {
+    /*
+        this.swPush.requestSubscription({
+          serverPublicKey: this.VAPID_KEY
+        })
+          .then(sub => {
+            this.notif.requestSubscription(sub).subscribe()
+            this.openSnackBar(`Great, you've been added to subscriptions list.`, 'Dismiss');
+          })
+    
+          */
 
-    this.swPush.requestSubscription({
-      serverPublicKey: this.VAPID_KEY
-    })
-      .then(sub => {
-        this.notif.requestSubscription(sub).subscribe()
-        this.openSnackBar(`Great, you've been added to subscriptions list.`, 'Dismiss');
-      })
-
-
+    this.openSnackBar(`Great, you've been added to subscriptions list.`, 'Dismiss');
   }
 
 }
