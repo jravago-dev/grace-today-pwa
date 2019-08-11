@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { SwUpdate } from '@angular/service-worker';
 
 @Component({
   selector: 'app-root',
@@ -14,16 +15,20 @@ export class AppComponent {
   onNetworkStatusChange() {
     this.offline = !navigator.onLine;
 
-    if (this.offline){
+    if (this.offline) {
       this.openSnackBar('You are now offline.', 'Dismiss')
-    }else{
+    } else {
       this.openSnackBar('You are now online.', 'Dismiss')
     }
 
   }
 
-  constructor(private _snackBar: MatSnackBar) {
+  constructor(private _snackBar: MatSnackBar, private swUpdate: SwUpdate) {
 
+    swUpdate.available.subscribe(event => {
+      console.log('New update available');
+      swUpdate.activateUpdate().then(() => document.location.reload())
+    })
   }
 
   openSnackBar(message: string, action: string) {
