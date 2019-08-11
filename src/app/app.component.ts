@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { SwUpdate } from '@angular/service-worker';
+import { SwUpdate, SwPush } from '@angular/service-worker';
 
 @Component({
   selector: 'app-root',
@@ -23,12 +23,39 @@ export class AppComponent {
 
   }
 
-  constructor(private _snackBar: MatSnackBar, private swUpdate: SwUpdate) {
+  constructor(private _snackBar: MatSnackBar, private swUpdate: SwUpdate, private swPush: SwPush) {
 
+    // Checking for updates.
     swUpdate.available.subscribe(event => {
-      console.log('New update available');
-      swUpdate.activateUpdate().then(() => document.location.reload())
+      this.openSnackBar(`Hey, an update is available. We'll try to update it for you.`, '');
+      swUpdate.activateUpdate().then(() =>
+        this.openSnackBar(`Update complete. please refresh the page.`, ''))
     })
+    // End
+
+    /*
+    swPush.messages.subscribe(n => {
+      const notificationData: any = n;
+      const options = {
+        body: notificationData.message,
+        badgeUrl: notificationData.badgeUrl,
+        icon: notificationData.iconUrl
+      };
+
+      navigator.serviceWorker.getRegistration().then(r => {
+        r.showNotification(notificationData.title, options)
+          .then(result => {
+            console.log(result)
+          },
+            err => {
+              console.log(err)
+            }
+          )
+      })
+
+    })
+    */
+
   }
 
   openSnackBar(message: string, action: string) {
