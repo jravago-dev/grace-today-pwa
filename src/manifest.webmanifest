@@ -3,7 +3,7 @@
     "short_name": "Grace : Today",
     "theme_color": "#a9504a",
     "background_color": "#fafafa",
-    "display": "fullscreen",
+    "display": "standalone",
     "categories": ["religion", "catholic", "scriptures"],
     "scope": "/",
     "start_url": "/",
