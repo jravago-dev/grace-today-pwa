@@ -1,5 +1,5 @@
     mat-card {
-        font-family: 'Open Sans', sans-serif;
+        font-family: 'Roboto', sans-serif;
         width: 80%;
         margin: 0 auto;
         margin-bottom: 25px !important;
@@ -60,4 +60,5 @@
     .votd {
         height: auto !important;
         margin-bottom: 250px !important;
+        font-family: 'Noto Serif', serif !important;
     }
