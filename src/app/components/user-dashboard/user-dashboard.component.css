@@ -4,3 +4,43 @@
     margin: 0 auto;
     margin-bottom: 25px;
 }
+
+.dateHeader,
+.dateSubheader {
+    text-align: center;
+}
+
+.dateSubheader {
+    font-style: italic;
+}
+
+.journalEntries,
+.verseEntry,
+.celebrationEntries {
+    font-size: 0.9em;
+}
+
+.verseEntry {
+    width: 90% !important;
+    margin: 0 auto !important;
+    font-family: 'Noto Serif', serif !important;
+    text-align: justify !important;
+}
+
+mat-card-footer {
+    text-align: right !important;
+    font-size: 0.8em;
+    margin-right: 25px;
+}
+
+.verse-container {
+    background: #e7decd;
+}
+
+.journal-container {
+    background: #efefd0;
+}
+
+.celebrations-container {
+    background: #d3d4d9;
+}

@@ -28,7 +28,9 @@ import {
   MatProgressBarModule,
   MatSnackBarModule,
   MatInputModule,
-  MatInput
+  MatDatepickerModule,
+  MatNativeDateModule,
+  MatSelectModule, 
   
 
 }
@@ -86,6 +88,9 @@ import { UserDashboardComponent } from './components/user-dashboard/user-dashboa
     ScrollingModule,
     AppRoutingModule,
     MatInputModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatSelectModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [

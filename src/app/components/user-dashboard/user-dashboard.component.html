@@ -1,16 +1,42 @@
-<mat-card class='small-box'>
-    <mat-card-header>
-        <mat-card-subtitle>My Journal</mat-card-subtitle>
-    </mat-card-header>
-    <mat-card-content>
-        No journal entries today.
-    </mat-card-content>
-</mat-card>
+<mat-card-title class="dateHeader">Monday, August 19</mat-card-title>
+<mat-card-subtitle class="dateSubheader">Nineteenth Sunday in Ordinary Time</mat-card-subtitle>
 
-<mat-card class='small-box'>
-    <mat-card-subtitle>Prayers</mat-card-subtitle>
+<br/>
+
+<mat-card class='small-box verse-container'>
+    <mat-card-header>
+        <mat-card-title>Verse of the Day</mat-card-title>
+        <mat-card-subtitle>Isaiah 41:10</mat-card-subtitle>
+    </mat-card-header>
+
     <br/>
     <mat-card-content>
+        <div class="verseEntry">
+            Do you not know? Have you not heard? The Lord is the everlasting God, the Creator of the ends of the earth. He will not grow tired or weary, and his understanding no one can fathom.
+        </div>
+    </mat-card-content>
 
+    <mat-card-actions>
+        <button mat-button color="accent">SHARE</button>
+    </mat-card-actions>
+</mat-card>
+
+<mat-card class='small-box journal-container'>
+    <mat-card-subtitle>My Journal</mat-card-subtitle>
+    <mat-card-content>
+        <div class="datePicker">
+        </div>
+        <div class="journalEntries">No entries today.</div>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-button color="accent">CREATE</button>
+    </mat-card-actions>
+</mat-card>
+
+
+<mat-card class='small-box celebrations-container'>
+    <mat-card-subtitle>Church Celebrations</mat-card-subtitle>
+    <mat-card-content>
+        No data.
     </mat-card-content>
 </mat-card>
