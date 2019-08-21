@@ -35,3 +35,8 @@ mat-card-subtitle {
     background: #9db17c;
     color: #fff !important;
 }
+
+.toolbar-title {
+    font-family: 'Satisfy', cursive;
+    font-size: 1.3em;
+}

@@ -21,8 +21,6 @@
 }
 
 .verseEntry {
-    width: 90% !important;
-    margin: 0 auto !important;
     font-family: 'Noto Serif', serif !important;
     text-align: justify !important;
 }
@@ -35,12 +33,21 @@ mat-card-footer {
 
 .verse-container {
     background: #e7decd;
+    width: 80% !important;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .journal-container {
     background: #efefd0;
+    min-width: 80% !important;
 }
 
 .celebrations-container {
     background: #d3d4d9;
+    width: 80% !important;
 }

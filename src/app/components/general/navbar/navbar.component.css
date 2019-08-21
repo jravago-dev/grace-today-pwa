@@ -15,3 +15,8 @@
     margin: 0;
     cursor: pointer;
 }
+
+.toolbar-title {
+    font-family: 'Satisfy', cursive;
+    font-size: 1.3em;
+}
