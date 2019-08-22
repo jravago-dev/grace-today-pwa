@@ -1,6 +1,6 @@
 mat-sidenav {
     width: 200px;
-    font-family: 'Open Sans', sans-serif !important;
+    font-family: 'Roboto', sans-serif !important;
 }
 
 mat-sidenav-content {
@@ -9,14 +9,34 @@ mat-sidenav-content {
 
 toolbar-title {
     margin: 0 16px 0 16px;
+    font-family: 'Roboto', sans-serif !important;
 }
 
 mat-list-item {
     font-size: 12px !important;
-    font-family: 'Open Sans', sans-serif !important;
+    font-family: 'Roboto', sans-serif !important;
 }
 
 .sidenavToolbar {
-    background: #000 !important;
+    background: #fcaa67 !important;
+    color: #000 !important;
+}
+
+mat-card-subtitle {
+    text-align: center;
+}
+
+.exit-app mat-list-item {
+    background: #a9504a;
     color: #fff !important;
+}
+
+.login-app mat-list-item {
+    background: #9db17c;
+    color: #fff !important;
+}
+
+.toolbar-title {
+    font-family: 'Satisfy', cursive;
+    font-size: 1.3em;
 }

@@ -7,8 +7,15 @@
         </mat-toolbar>
 
         <mat-nav-list>
+            <div *ngIf="loggedAccount">
+                <mat-list-item (click)="sidenav.toggle()" routerLink="/dashboard">
+                    <mat-icon>dashboard</mat-icon> &nbsp; My Dashboard
+                </mat-list-item>
+                <mat-divider></mat-divider>
+            </div>
+
             <h2 matSubheader>Menu</h2>
-            <mat-list-item (click)="sidenav.toggle()" routerLink="/today">
+            <mat-list-item *ngIf="!loggedAccount" (click)="sidenav.toggle()" routerLink="/">
                 <mat-icon>today</mat-icon> &nbsp; Today's Verse
             </mat-list-item>
             <mat-list-item (click)="sidenav.toggle()" routerLink="/readings">
@@ -18,7 +25,7 @@
 
             <mat-divider></mat-divider>
 
-            <h2 matSubheader>Misc</h2>
+            <h2 matSubheader>About</h2>
 
             <mat-list-item (click)="sidenav.toggle()" routerLink="/about">
                 <mat-icon>list</mat-icon>
@@ -31,14 +38,20 @@
 
             <mat-divider></mat-divider>
 
-            <mat-list-item (click)="subscribeToNotifications()">
-                <mat-icon>done_all</mat-icon>
-                Subscribe to Notifications
-            </mat-list-item>
+            <div *ngIf="loggedAccount" class="exit-app">
+                <mat-list-item (click)="sidenav.toggle();logout()">
+                    <mat-icon>exit_to_app</mat-icon> &nbsp; Sign Out
+                </mat-list-item>
+                <mat-divider></mat-divider>
+            </div>
 
+            <div *ngIf="!loggedAccount" class="login-app">
+                <mat-list-item (click)="sidenav.toggle()" routerLink="/login">
+                    <mat-icon>exit_to_app</mat-icon> &nbsp; Sign In
+                </mat-list-item>
+                <mat-divider></mat-divider>
+            </div>
 
-
-            <h2 matSubheader>v5.0.0</h2>
 
         </mat-nav-list>
 

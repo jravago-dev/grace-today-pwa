@@ -1,0 +1,53 @@
+.small-box {
+    font-family: 'Roboto', sans-serif;
+    width: 80% !important;
+    margin: 0 auto;
+    margin-bottom: 25px;
+}
+
+.dateHeader,
+.dateSubheader {
+    text-align: center;
+}
+
+.dateSubheader {
+    font-style: italic;
+}
+
+.journalEntries,
+.verseEntry,
+.celebrationEntries {
+    font-size: 0.9em;
+}
+
+.verseEntry {
+    font-family: 'Noto Serif', serif !important;
+    text-align: justify !important;
+}
+
+mat-card-footer {
+    text-align: right !important;
+    font-size: 0.8em;
+    margin-right: 25px;
+}
+
+.verse-container {
+    background: #e7decd;
+    width: 80% !important;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.journal-container {
+    background: #efefd0;
+    min-width: 80% !important;
+}
+
+.celebrations-container {
+    background: #d3d4d9;
+    width: 80% !important;
+}

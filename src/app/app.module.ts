@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
@@ -11,7 +10,9 @@ import { FlexLayoutModule } from '@angular/flex-layout'
 
 import { ScrollingModule } from '@angular/cdk/scrolling';
 
-import { RequestCache } from './cache/request-cache.service';
+import { JwtInterceptor } from './helpers/jwt.interceptor'
+import { ErrorInterceptor } from './helpers/error.interceptor';
+
 import { CachingInterceptor } from './cache/caching-interceptor.service';
 
 import {
@@ -23,8 +24,14 @@ import {
   MatDividerModule,
   MatSidenavModule,
   MatMenuModule,
+  MatFormFieldModule,
   MatProgressBarModule,
-  MatSnackBarModule
+  MatSnackBarModule,
+  MatInputModule,
+  MatDatepickerModule,
+  MatNativeDateModule,
+  MatSelectModule, 
+  
 
 }
   from '@angular/material';
@@ -41,6 +48,9 @@ import { GraceDashboardComponent } from './components/grace-dashboard/grace-dash
 import { ReferenceComponent } from './components/reference/reference.component';
 import { ReadingsListComponent } from './components/readings-list/readings-list.component';
 import { PushNotificationService } from './services/push-notification.service';
+import { LoginComponent } from './components/general/login/login.component';
+import { RegistrationComponent } from './components/general/registration/registration.component';
+import { UserDashboardComponent } from './components/user-dashboard/user-dashboard.component';
 
 
 @NgModule({
@@ -52,7 +62,10 @@ import { PushNotificationService } from './services/push-notification.service';
     ReadingCardComponent,
     GraceDashboardComponent,
     ReferenceComponent,
-    ReadingsListComponent
+    ReadingsListComponent,
+    LoginComponent,
+    RegistrationComponent,
+    UserDashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -63,6 +76,7 @@ import { PushNotificationService } from './services/push-notification.service';
     ReactiveFormsModule,
     MatToolbarModule,
     MatIconModule,
+    MatFormFieldModule,
     MatCardModule,
     MatButtonModule,
     MatListModule,
@@ -73,9 +87,17 @@ import { PushNotificationService } from './services/push-notification.service';
     MatSnackBarModule,
     ScrollingModule,
     AppRoutingModule,
+    MatInputModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatSelectModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
-  providers: [{ provide: HTTP_INTERCEPTORS, useClass: CachingInterceptor, multi: true }, PushNotificationService],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: CachingInterceptor, multi: true }, 
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },    
+    PushNotificationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

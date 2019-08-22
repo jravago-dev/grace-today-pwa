@@ -5,10 +5,10 @@
 export const environment = {
   production: false,
   isDebugMode: true,
-  verseAPI: `https://publication.evangelizo.ws/AM/days`,
-  //votdAPI: `http://labs.bible.org/api/?passage=votd&type=json&formatting=para`
+  verseAPI: `https://publication.evangelizo.ws/AM/days`, 
   votdAPI: `https://beta.ourmanna.com/api/v1/get/?format=json`,
-  bibleAPI: `https://bible-api.com/`
+  bibleAPI: `https://bible-api.com/`,
+  gtAPI: `http://localhost:3000`
 
 };
 
