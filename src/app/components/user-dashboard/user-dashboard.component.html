@@ -1,7 +1,9 @@
 <mat-card-title class="dateHeader" *ngIf="liturgyData">{{ liturgyData.date_displayed }}</mat-card-title>
 <mat-card-subtitle class="dateSubheader" *ngIf="liturgyData">{{ liturgyData.liturgic_title }}</mat-card-subtitle>
 
-<br/>
+<mat-divider></mat-divider> <br/>
+
+<mat-card-subtitle fxLayoutAlign="center center">Reflections</mat-card-subtitle>
 
 <div class="container" fxLayout="row wrap" fxLayout.md="column" fxLayout.lg="column" fxLayout.sm="column" fxLayout.xs="column" fxLayoutGap="10px" fxLayoutAlign="start">
 

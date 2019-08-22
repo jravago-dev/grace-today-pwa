@@ -4,5 +4,5 @@ export const environment = {
   verseAPI: `https://publication.evangelizo.ws/AM/days`,
   votdAPI: `https://beta.ourmanna.com/api/v1/get/?format=json`,
   bibleAPI: `https://bible-api.com/`,
-  gtAPI: `http://api.ourgrace.today`
+  gtAPI: `https://gt-api-staging.herokuapp.com`
 };
