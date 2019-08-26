@@ -64,6 +64,8 @@ export class RegistrationComponent implements OnInit {
     accountObject.emailAddress = this.registrationForm.value.emailAddress;
     accountObject.userName = this.registrationForm.value.emailAddress;
     accountObject.passwordHash = this.registrationForm.value.passwordHash;
+    accountObject.firstName = this.registrationForm.value.firstName;
+    accountObject.lastName = this.registrationForm.value.lastName;
 
     this.accountService.register(accountObject)
       .subscribe(result => {
