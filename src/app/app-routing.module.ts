@@ -16,6 +16,9 @@ const routes: Routes = [
     path: '', component: GraceDashboardComponent
   },
   {
+    path: 'activate/:verificationCode', component: RegistrationComponent
+  },  
+  {
     path: 'readings', component: ReadingsListComponent
   },
   {
