@@ -1,7 +1,14 @@
-.login-card {
-    font-family: 'Roboto', sans-serif;
+.login-card,
+mat-progress-bar {
+    width: 90% !important;
+    margin: 0 auto;
 }
 
 mat-form-field {
-    width: 100% important;
+    width: 100% !important;
+}
+
+.btn-block {
+    width: 100% !important;
+    margin-bottom: 10px;
 }
