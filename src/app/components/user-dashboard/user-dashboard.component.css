@@ -34,6 +34,7 @@ mat-card-footer {
 .verse-container {
     background: #e7decd;
     width: 80% !important;
+    margin-bottom: 20px !important;
     user-select: none;
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -45,9 +46,11 @@ mat-card-footer {
 .journal-container {
     background: #efefd0;
     min-width: 80% !important;
+    margin-bottom: 20px !important;
 }
 
 .celebrations-container {
     background: #d3d4d9;
     width: 80% !important;
+    margin-bottom: 200px !important;
 }

@@ -1,63 +1,61 @@
-<mat-card-title class="dateHeader" *ngIf="liturgyData">{{ liturgyData.date_displayed }}</mat-card-title>
-<mat-card-subtitle class="dateSubheader" *ngIf="liturgyData">{{ liturgyData.liturgic_title }}</mat-card-subtitle>
+<div class="container" fxLayout fxLayout.xs="column" fxLayoutAlign="start" fxLayout.lg="row" fxLayoutGap.xs="0">
 
-<mat-divider></mat-divider> <br/>
 
-<mat-card-subtitle fxLayoutAlign="center center">Reflections</mat-card-subtitle>
+    <mat-card-title class="dateHeader" *ngIf="liturgyData">{{ liturgyData.date_displayed }}</mat-card-title>
+    <mat-card-subtitle class="dateSubheader" *ngIf="liturgyData">{{ liturgyData.liturgic_title }}</mat-card-subtitle>
 
-<div class="container" fxLayout="row wrap" fxLayout.md="column" fxLayout.lg="column" fxLayout.sm="column" fxLayout.xs="column" fxLayoutGap="10px" fxLayoutAlign="start">
-
-    <div fxFlex="33%" *ngIf="votd">
-        <mat-card class='small-box verse-container mat-elevation-z4' matRipple matRippleCentered="centered">
-            <mat-card-header>
-                <mat-card-title>Verse of the Day</mat-card-title>
-                <mat-card-subtitle>{{ votd.reference }}</mat-card-subtitle>
-            </mat-card-header>
-            <mat-card-content>
-                <div class="verseEntry">
-                    {{ returnQuoted(votd.text) }}
-                </div>
-            </mat-card-content>
-
-            <mat-card-actions>
-                <button mat-button (click)="openSnackBar('Coming Soon!', 'Dismiss')">SHARE</button>
-            </mat-card-actions>
-        </mat-card>
-    </div>
-
-    <div fxFlex="33%">
-        <mat-card class='small-box journal-container' flexFill>
-            <mat-card-header>
-                <mat-card-title>
-                    <mat-card-title>My Journal Entries</mat-card-title>
-                    <mat-card-subtitle>August 21, 2019</mat-card-subtitle>
-                </mat-card-title>
-            </mat-card-header>
-            <mat-card-content>
-                No entries for today.
-            </mat-card-content>
-            <mat-card-actions>
-                <button mat-button (click)="openSnackBar('Coming Soon!', 'Dismiss')">CREATE</button>
-            </mat-card-actions>
-        </mat-card>
-    </div>
-
+    <br/>
     <mat-divider></mat-divider>
+    <br/>
 
-    <div fxFlex="33%">
-        <mat-card-subtitle fxLayoutAlign="center center">Church Celebrations</mat-card-subtitle>
-        <div *ngIf="liturgyData" class="small-box celebrations-container">
-            <mat-card *ngFor="let saint of liturgyData.saints">
-                <mat-card-header>
-                    <mat-card-title>{{ saint.name }}</mat-card-title>
-                    <mat-card-subtitle>{{ saint.short_description }}</mat-card-subtitle>
-                </mat-card-header>
-                <img mat-card-image [src]="saint.image_links.large" [alt]="saint.name" />
-                <mat-card-content>
+    <mat-card-subtitle fxLayoutAlign="center center">Reflections</mat-card-subtitle> <br/>
 
-                </mat-card-content>
-            </mat-card>
-        </div>
+    <mat-card *ngIf="votd" class='small-box verse-container mat-elevation-z4' matRipple matRippleCentered="centered">
+        <mat-card-header>
+            <mat-card-title>Verse of the Day</mat-card-title>
+            <mat-card-subtitle>{{ votd.reference }}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+            <div class="verseEntry">
+                {{ returnQuoted(votd.text) }}
+            </div>
+        </mat-card-content>
+
+        <mat-card-actions>
+            <button mat-button (click)="openSnackBar('Coming Soon!', 'Dismiss')">SHARE</button>
+        </mat-card-actions>
+    </mat-card>
+
+    <mat-card class='small-box journal-container' flexFill>
+        <mat-card-header>
+            <mat-card-title>
+                <mat-card-title>My Journal Entries</mat-card-title>
+                <mat-card-subtitle>August 21, 2019</mat-card-subtitle>
+            </mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            No entries for today.
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-button (click)="openSnackBar('Coming Soon!', 'Dismiss')">CREATE</button>
+        </mat-card-actions>
+    </mat-card>
+
+    <mat-divider></mat-divider> <br/>
+
+    <mat-card-subtitle fxLayoutAlign="center center">Church Celebrations</mat-card-subtitle> <br/>
+    <div *ngIf="liturgyData" class="small-box celebrations-container">
+        <mat-card *ngFor="let saint of liturgyData.saints">
+            <mat-card-header>
+                <mat-card-title>{{ saint.name }}</mat-card-title>
+                <mat-card-subtitle>{{ saint.short_description }}</mat-card-subtitle>
+            </mat-card-header>
+            <img *ngIf="saint.image_links" mat-card-image [src]="saint.image_links.large" [alt]="saint.name" />
+            <mat-card-content>
+
+            </mat-card-content>
+        </mat-card>
     </div>
+
 
 </div>
