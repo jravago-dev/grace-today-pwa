@@ -54,3 +54,47 @@ mat-card-footer {
     width: 80% !important;
     margin-bottom: 200px !important;
 }
+
+.profile-container,
+.menu-container {
+    background: #fffcf7;
+    width: 90% !important;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.profile-container img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.profile-container h3,
+.profile-container h5 {
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+}
+
+.profile-container .btn-profile {
+    width: 99%;
+    height: 50px;
+    line-height: 20px;
+    margin-right: 1px;
+    margin-bottom: 5px;
+    background: #546a76;
+    color: #fff;
+}
+
+.menu-container .btn-menu {
+    width: 100%;
+    height: 50px;
+    line-height: 20px;
+    margin-right: 1px;
+    margin-bottom: 5px;
+    background: #98c1d9;
+    color: #111;
+}
