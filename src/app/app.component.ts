@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { SwUpdate, SwPush } from '@angular/service-worker';
+import { AccountService } from './services/account.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -8,9 +10,11 @@ import { SwUpdate, SwPush } from '@angular/service-worker';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
   title = 'Grace : Today';
   offline: boolean;
   isInStandaloneMode: boolean;
+  userDetails;
 
   onNetworkStatusChange() {
     this.offline = !navigator.onLine;
@@ -23,7 +27,15 @@ export class AppComponent {
 
   }
 
-  constructor(private _snackBar: MatSnackBar, private swUpdate: SwUpdate, private swPush: SwPush) {
+  constructor(private _snackBar: MatSnackBar, private swUpdate: SwUpdate, private swPush: SwPush, private account: AccountService, private router: Router) {
+
+    this.userDetails = this.account.currentAccountValue;
+
+    if (this.userDetails === null) {
+      this.router.navigate(['/'])
+    } else {
+      this.router.navigate(['/dashboard'])
+    }
 
     // Checking for updates.
     swUpdate.available.subscribe(event => {

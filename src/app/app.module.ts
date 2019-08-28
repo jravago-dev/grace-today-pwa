@@ -31,6 +31,7 @@ import {
   MatDatepickerModule,
   MatNativeDateModule,
   MatSelectModule, 
+  MatBadgeModule
   
 
 }
@@ -83,6 +84,7 @@ import { UserDashboardComponent } from './components/user-dashboard/user-dashboa
     MatDividerModule,
     MatSidenavModule,
     MatProgressBarModule,
+    MatBadgeModule,
     MatMenuModule,
     MatSnackBarModule,
     ScrollingModule,

@@ -1,5 +1,19 @@
+.user-dashboard {
+    background: url('http://www.kabu-load.net/data/out/102/IMG_998701.jpg') center;
+    background-size: cover;
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    opacity: 0.2;
+}
+
 .small-box {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     width: 80% !important;
     margin: 0 auto;
     margin-bottom: 25px;
@@ -53,4 +67,54 @@ mat-card-footer {
     background: #d3d4d9;
     width: 80% !important;
     margin-bottom: 200px !important;
+}
+
+.profile-container {
+    width: 90% !important;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.profile-container img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.profile-container h3,
+.profile-container h5 {
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+}
+
+.profile-container h3 {
+    font-family: 'Satisfy';
+    font-size: 2em;
+}
+
+.profile-container .btn-profile {
+    width: 87%;
+    min-height: 100px;
+    margin-right: 1px;
+    margin-bottom: 5px;
+    background: #f2c57c;
+    color: #111;
+    white-space: normal;
+    word-wrap: break-word;
+    font-size: 1em;
+    text-align: center;
+    line-height: 50px;
+    align-content: flex-start;
+    font-family: 'Open Sans';
+}
+
+.verse-box {
+    margin: 0 auto;
+    margin-bottom: 150px;
+    text-align: center;
 }

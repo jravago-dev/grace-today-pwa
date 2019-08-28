@@ -15,12 +15,12 @@
             </div>
 
             <h2 matSubheader>Menu</h2>
-            <mat-list-item *ngIf="!loggedAccount" (click)="sidenav.toggle()" routerLink="/">
+            <mat-list-item (click)="sidenav.toggle()" routerLink="/">
                 <mat-icon>today</mat-icon> &nbsp; Today's Verse
             </mat-list-item>
             <mat-list-item (click)="sidenav.toggle()" routerLink="/readings">
                 <mat-icon>local_library</mat-icon>
-                Liturgy Readings
+                &nbsp; Liturgy Readings
             </mat-list-item>
 
             <mat-divider></mat-divider>
@@ -29,11 +29,11 @@
 
             <mat-list-item (click)="sidenav.toggle()" routerLink="/about">
                 <mat-icon>list</mat-icon>
-                Changelogs
+                &nbsp; Changelogs
             </mat-list-item>
             <mat-list-item (click)="sidenav.toggle()" routerLink="/thanks">
                 <mat-icon>done_all</mat-icon>
-                Special Thanks
+                &nbsp; Special Thanks
             </mat-list-item>
 
             <mat-divider></mat-divider>
