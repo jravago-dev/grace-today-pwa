@@ -1,37 +1,48 @@
+<div class="user-dashboard"></div>
 <div gdAreas="header header | content content | footer footer" gdGap="16px" gdRows="auto auto auto">
     <div gdArea="header">
         <div class="profile-container">
             <div fxLayout fxLayoutAlign="center center">
-                <img src="https://i.pinimg.com/474x/cc/76/26/cc7626092e4c9ee51580cd590a1cc2f2.jpg">
+                <img src="https://screenshotlayer.com/images/assets/placeholder.png">
             </div>
-            <h3>Juan De La Cruz</h3>
-            <h5>Beginner</h5>
-            <br/>
-            <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="start stretch" fxFill>
+            <h3>{{ userDetails.fullName }}</h3>
+            <h5>{{ userDetails.emailAddress }}</h5>
+            <br/><br/>
+            <div fxLayout="row" fxLayoutAlign="start stretch" fxFill>
                 <div fxFlex>
-                    <button mat-button class="btn-profile">Edit Profile Info</button>
+                    <button mat-raised-button (click)="openSnackBar('Coming Soon!', 'Dismiss')" class=" btn-profile ">                          
+                        <mat-icon aria-hidden="false " aria-label="My Profile ">face</mat-icon>
+                        Profile           
+                    </button>
                 </div>
                 <div fxFlex>
-                    <button mat-button class="btn-profile">Create Journal Entry</button>
+                    <button mat-raised-button (click)="openSnackBar( 'Coming Soon!', 'Dismiss')" class="btn-profile">
+                    <mat-icon aria-hidden="false" aria-label="My Journal">class</mat-icon>
+                    Journal
+                    </button>
+                </div>
+            </div>
+            <br/>
+            <div fxLayout="row" fxLayoutAlign="start stretch" fxFill>
+                <div fxFlex>
+                    <button mat-raised-button (click)="openSnackBar('Coming Soon!', 'Dismiss')" class=" btn-profile ">                          
+                                <mat-icon aria-hidden="false " aria-label="Calendar ">today</mat-icon>    
+                                Calendar
+                            </button>
+                </div>
+                <div fxFlex>
+                    <button mat-raised-button (click)="openSnackBar( 'Coming Soon!', 'Dismiss')" class="btn-profile">
+                    <mat-icon aria-hidden="false" aria-label="Settings">settings_applications</mat-icon>
+                    Settings
+                    </button>
                 </div>
             </div>
         </div>
     </div>
 
     <div gdArea="content">
-        <div class="menu-container">
-            <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="start stretch" fxFill>
-                <div fxFlex="33%">
-                    <button mat-flat-button class="btn-menu">My Journal Entries</button>
-                </div>
-                <div fxFlex="33%">
-                    <button mat-flat-button class="btn-menu">My Calendar</button>
-                </div>
-                <div fxFlex="33%">
-                    <button mat-flat-button class="btn-menu">My Achievements</button>
-                </div>
-            </div>
-
+        <div class="verse-box">
+            <h6>Copyright 2019 | Grace:Today | v6.2.0</h6>
         </div>
     </div>
 </div>

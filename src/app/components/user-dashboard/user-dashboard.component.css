@@ -1,5 +1,19 @@
+.user-dashboard {
+    background: url('http://www.kabu-load.net/data/out/102/IMG_998701.jpg') center;
+    background-size: cover;
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    opacity: 0.2;
+}
+
 .small-box {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     width: 80% !important;
     margin: 0 auto;
     margin-bottom: 25px;
@@ -55,9 +69,7 @@ mat-card-footer {
     margin-bottom: 200px !important;
 }
 
-.profile-container,
-.menu-container {
-    background: #fffcf7;
+.profile-container {
     width: 90% !important;
     margin: 0 auto;
     text-align: center;
@@ -70,6 +82,7 @@ mat-card-footer {
     border-radius: 50%;
     margin-top: 20px;
     margin-bottom: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .profile-container h3,
@@ -79,22 +92,29 @@ mat-card-footer {
     font-weight: normal;
 }
 
-.profile-container .btn-profile {
-    width: 99%;
-    height: 50px;
-    line-height: 20px;
-    margin-right: 1px;
-    margin-bottom: 5px;
-    background: #546a76;
-    color: #fff;
+.profile-container h3 {
+    font-family: 'Satisfy';
+    font-size: 2em;
 }
 
-.menu-container .btn-menu {
-    width: 100%;
-    height: 50px;
-    line-height: 20px;
+.profile-container .btn-profile {
+    width: 87%;
+    min-height: 100px;
     margin-right: 1px;
     margin-bottom: 5px;
-    background: #98c1d9;
+    background: #f2c57c;
     color: #111;
+    white-space: normal;
+    word-wrap: break-word;
+    font-size: 1em;
+    text-align: center;
+    line-height: 50px;
+    align-content: flex-start;
+    font-family: 'Open Sans';
+}
+
+.verse-box {
+    margin: 0 auto;
+    margin-bottom: 150px;
+    text-align: center;
 }

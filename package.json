@@ -1,6 +1,6 @@
 {
-    "name": "daily-verse-app",
-    "version": "5.0.0",
+    "name": "grace-today",
+    "version": "6.2.0",
     "scripts": {
         "ng": "ng",
         "start": "node server.js",
